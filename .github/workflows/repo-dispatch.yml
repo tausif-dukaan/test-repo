@@ -15,3 +15,8 @@ jobs:
       - name: Make a simple curl request
         run: |
           curl https://www.keycdn.com
+          echo "@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@"
+          curl https://www.google.com
+          echo "##################################"
+          curl https://www.twitter.com
+          echo "**********************************"
