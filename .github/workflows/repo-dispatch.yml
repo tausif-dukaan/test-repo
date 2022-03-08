@@ -17,7 +17,7 @@ jobs:
           curl \
           -X POST \
           -H "Accept: application/vnd.github.v3+json" \
-          -H "Authorization: token ${{ secrets.GITHUB_TOKEN }}" \
+          -H "Authorization: token ${{ secrets.SECRET_TOKEN }}" \
           https://api.github.com/repos/tausif-dukaan/cross-repo-builds/dispatches \
           -d '{"event_type":"cross_repo_dispatch_event"}'
           echo "~~~~~~~~~~~~~~~~~~~~~~~~~~ hello world ~~~~~~~~~~~~~~~~~~~~~~~~~~"
