@@ -12,11 +12,13 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
-      - name: Make a simple curl request
+      - name: Make a simple curl request to cross-repo-builds repo
         run: |
-          curl https://www.keycdn.com
-          echo "@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@"
-          curl https://www.google.com
-          echo "##################################"
-          curl https://www.twitter.com
-          echo "**********************************"
+          curl \
+          -X POST \
+          -H "Accept: application/vnd.github.v3+json" \
+          -H "Authorization: token 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" \
+          https://api.github.com/repos/tausif-dukaan/cross-repo-builds/dispatches \
+          -d '{"event_type":"cross_repo_dispatch_event"}'
+          echo "~~~~~~~~~~~~~~~~~~~~~~~~~~ hello world ~~~~~~~~~~~~~~~~~~~~~~~~~~"
+          
