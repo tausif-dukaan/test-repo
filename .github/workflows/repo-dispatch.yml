@@ -1,0 +1,17 @@
+name: Repo Dispatch Action
+
+on:
+  push:
+    branches: [main]
+
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Make a simple curl request
+        run: |
+          curl https://www.keycdn.com
